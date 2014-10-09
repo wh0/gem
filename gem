@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ -e ~/.gem ]; then
+	rm -rf ~/.gem && echo '\033[35mGem Deactivated\033[0m'
+else
+	touch ~/.gem && case "$(head -c1 /dev/urandom)" in
+		0) echo '\033[1;37mMoooooooo!\033[0m';;
+		[1-9]) echo '\033[35mPerfect Gem Activated\033[0m';;
+		*) echo '\033[35mGem Activated\033[0m';;
+	esac
+fi
